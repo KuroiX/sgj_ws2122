@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KuroiTesting.unity
     guid: 5393bb9cfa665cc4b848fc776888b279
+  - enabled: 1
+    path: Assets/Scenes/Kuroi2.unity
+    guid: c33f743fb82c2114294e178577f6490a
   m_configObjects: {}
