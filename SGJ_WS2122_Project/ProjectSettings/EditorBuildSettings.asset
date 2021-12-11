@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Shader/Magic/Scenes/urgh/Test.unity
     guid: d3f534c1f9975b1429485afb2d075af3
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 4a70b43dc63a8cd40b75486896310f34
+  - enabled: 1
+    path: Assets/Scenes/old/Tutorial.unity
+    guid: 8cecf151675428a4dbbf8ce994918254
   m_configObjects: {}

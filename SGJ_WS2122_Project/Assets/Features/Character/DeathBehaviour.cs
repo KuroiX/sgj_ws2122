@@ -21,5 +21,21 @@ public class DeathBehaviour : MonoBehaviour
         
         transform.position = _initialPosition;
         _controller.ResetLayer();
+        StartCoroutine(DisableInputForASec());
+    }
+
+
+    public void SetPoint(Vector3 position)
+    {
+        _initialPosition = position;
+    }
+
+    private IEnumerator DisableInputForASec()
+    {
+        CharacterController.Input.Character.Disable();
+        
+        yield return new WaitForSeconds(.5f);
+        
+        CharacterController.Input.Character.Enable();
     }
 }
