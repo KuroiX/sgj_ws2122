@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 
 public class CharacterController : MonoBehaviour
 {
-
-    private CharacterInput _input;
+    private static CharacterInput _input;
+    public static CharacterInput Input => _input;
 
     private Rigidbody _rb;
     private Collider _collider;
@@ -34,6 +34,7 @@ public class CharacterController : MonoBehaviour
     {
         _input = new CharacterInput();
         _input.Character.Enable();
+        _input.UITutorial.Enable();
 
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();

@@ -154,6 +154,54 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""UITutorial"",
+            ""id"": ""eb8231fe-98fd-4c1e-a5e0-d9acd82debb6"",
+            ""actions"": [
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""431f48b7-5bb9-4561-955d-fd5d78ef5fdb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a555e13-2e22-434d-ae99-502548d2b6e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6844e642-6897-47c9-8bac-2912f281cb9e"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7e461d5-5b8a-45cb-81be-1a3937381af0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,6 +212,10 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
         m_Character_MirrorSwitch = m_Character.FindAction("MirrorSwitch", throwIfNotFound: true);
         m_Character_LayerSwitch = m_Character.FindAction("LayerSwitch", throwIfNotFound: true);
         m_Character_Move = m_Character.FindAction("Move", throwIfNotFound: true);
+        // UITutorial
+        m_UITutorial = asset.FindActionMap("UITutorial", throwIfNotFound: true);
+        m_UITutorial_Enter = m_UITutorial.FindAction("Enter", throwIfNotFound: true);
+        m_UITutorial_Exit = m_UITutorial.FindAction("Exit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,11 +328,57 @@ public partial class @CharacterInput : IInputActionCollection2, IDisposable
         }
     }
     public CharacterActions @Character => new CharacterActions(this);
+
+    // UITutorial
+    private readonly InputActionMap m_UITutorial;
+    private IUITutorialActions m_UITutorialActionsCallbackInterface;
+    private readonly InputAction m_UITutorial_Enter;
+    private readonly InputAction m_UITutorial_Exit;
+    public struct UITutorialActions
+    {
+        private @CharacterInput m_Wrapper;
+        public UITutorialActions(@CharacterInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Enter => m_Wrapper.m_UITutorial_Enter;
+        public InputAction @Exit => m_Wrapper.m_UITutorial_Exit;
+        public InputActionMap Get() { return m_Wrapper.m_UITutorial; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UITutorialActions set) { return set.Get(); }
+        public void SetCallbacks(IUITutorialActions instance)
+        {
+            if (m_Wrapper.m_UITutorialActionsCallbackInterface != null)
+            {
+                @Enter.started -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnEnter;
+                @Exit.started -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_UITutorialActionsCallbackInterface.OnExit;
+            }
+            m_Wrapper.m_UITutorialActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+            }
+        }
+    }
+    public UITutorialActions @UITutorial => new UITutorialActions(this);
     public interface ICharacterActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnMirrorSwitch(InputAction.CallbackContext context);
         void OnLayerSwitch(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IUITutorialActions
+    {
+        void OnEnter(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }
