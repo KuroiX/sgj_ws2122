@@ -4,7 +4,7 @@ Shader "Unlit/Initial"
     {
         _Pattern("Pattern", 2D) = "white" {}
         _PatternWidth("PatternWidth", int) = 240
-        _PatternHeight("PatternWidth", int) = 240
+        _PatternHeight("PatternHeight", int) = 1080
     }
     SubShader
     {

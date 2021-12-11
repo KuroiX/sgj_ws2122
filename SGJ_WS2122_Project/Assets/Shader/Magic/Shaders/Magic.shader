@@ -8,7 +8,7 @@ Shader "Unlit/Magic"
         _ScreenWidth("ScreenWidth", int) = 1920
         _ScreenHeight("ScreenHeight", int) = 1080
         _PatternWidth("PatternWidth", int) = 240
-        _PatternHeight("PatternWidth", int) = 240
+        _PatternHeight("PatternHeight", int) = 1080
     }
     SubShader
     {
