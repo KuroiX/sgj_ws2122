@@ -482,15 +482,14 @@ PrefabInstance:
         the image farther away from your face until you see three squares. If you
         see one or two dots, start over!
 
-        
-
-        When you clearly see
-        three dots, hold your head still and the hidden image will magically appear.
-        Good Luck!
 
 
-        Continue the tutorial after you gained some confidence
-        with the technique.'
+        When you clearly see three dots,
+        hold your head still and the hidden image will magically appear. Good Luck!
+
+
+        Continue
+        the tutorial after you gained some confidence with the technique.'
       objectReference: {fileID: 0}
     - target: {fileID: 4617130571508120667, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -573,16 +572,16 @@ PrefabInstance:
     - target: {fileID: 2377757124617225744, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_text
       value: 'Now let''s get to the juicy part. You can switch between the color
-        and the form dimension by pressing [tab].
+        and the shape dimension by pressing Tab (do it now).
 
 
-        However, the mirror is
-        broken so you have to use a special technique to even see whats going on.
+        However, the
+        mirror is broken so you have to use a special technique to even see whats
+        going on.
 
 
-        Just
-        walk to the right until the next text box appears that explains the viewing
-        technique.'
+        Just walk to the right until the next text box appears
+        that explains the viewing technique.'
       objectReference: {fileID: 0}
     - target: {fileID: 4617130571508120667, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_SizeDelta.y
@@ -757,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2115584917894632211, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.49
+      value: 57.37
       objectReference: {fileID: 0}
     - target: {fileID: 2115584917894632211, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -813,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2377757124617225744, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_text
-      value: Have
+      value: 'Have fun finding '
       objectReference: {fileID: 0}
     - target: {fileID: 4617130571508120667, guid: 8f2201170f44a6a43a55536e0f7b24c1, type: 3}
       propertyPath: m_SizeDelta.x
