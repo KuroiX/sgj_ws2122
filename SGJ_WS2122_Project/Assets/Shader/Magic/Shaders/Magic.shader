@@ -72,8 +72,8 @@ Shader "Unlit/Magic"
                 if (not_in_this_column)
                     return tex2D(_Aether, IN.localTexcoord);
 
-                int max_depth = 80;
-                int layers = 80;
+                int max_depth = 100;
+                int layers = 100;
                 int layer_distance = max_depth / layers;
                 
                 float4 first_lookup = find_lookup(IN.vertex.xy, layers, layer_distance);
