@@ -27,6 +27,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float jumpHeight;
 
     [SerializeField] private LayerMask groundedMask;
+
+    private PostProcess _postProcess;
     
     private void Awake()
     {
@@ -36,6 +38,8 @@ public class CharacterController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _currentLayerIndex = initialLayer;
+
+        _postProcess = FindObjectOfType<PostProcess>();
     }
 
     private void OnEnable()
@@ -46,6 +50,8 @@ public class CharacterController : MonoBehaviour
         _input.Character.LayerSwitch.performed += SwitchLayer;
 
         _input.Character.Jump.performed += Jump;
+
+        _input.Character.MirrorSwitch.performed += SwitchMirror;
     }
 
     private void OnDisable()
@@ -56,6 +62,8 @@ public class CharacterController : MonoBehaviour
         _input.Character.LayerSwitch.performed -= SwitchLayer;
         
         _input.Character.Jump.performed -= Jump;
+        
+        _input.Character.MirrorSwitch.performed -= SwitchMirror;
     }
 
     private void Move(InputAction.CallbackContext ctx)
@@ -97,6 +105,11 @@ public class CharacterController : MonoBehaviour
         {
             _rb.velocity = new Vector3(_rb.velocity.x, jumpHeight, _rb.velocity.z);
         }
+    }
+    
+    private void SwitchMirror(InputAction.CallbackContext ctx)
+    {
+        _postProcess.SwitchTexture();
     }
 
     private bool IsGrounded()
