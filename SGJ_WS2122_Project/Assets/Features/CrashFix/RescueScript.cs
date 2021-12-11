@@ -5,7 +5,7 @@ public class RescueScript : MonoBehaviour
 {
 
     private void Start() {
-        SceneManager.LoadScene("Scenes/Kuroi2");
+        SceneManager.LoadScene("Scenes/old/Level1");
     }
 
 }
