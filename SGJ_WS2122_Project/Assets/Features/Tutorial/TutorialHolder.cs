@@ -12,13 +12,13 @@ public class TutorialHolder : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //tutorialText.SetActive(true);
+        tutorialText.SetActive(true);
         //CharacterController.Input.UITutorial.Enter.performed += OnEnter;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //tutorialText.SetActive(false);
+        tutorialText.SetActive(false);
         //CharacterController.Input.UITutorial.Enter.performed -= OnEnter;
     }
 
