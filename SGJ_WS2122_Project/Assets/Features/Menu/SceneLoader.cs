@@ -12,6 +12,17 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int newIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (newIndex >= SceneManager.sceneCount)
+        {
+            Application.Quit();
+            Debug.Log("Quit");
+        }
+        else
+        {
+            SceneManager.LoadScene(newIndex);
+        }
+        
     }
 }

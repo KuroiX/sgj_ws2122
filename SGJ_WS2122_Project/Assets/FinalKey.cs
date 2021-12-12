@@ -10,6 +10,6 @@ public class FinalKey : MonoBehaviour
     {
         FindObjectOfType<PostProcess>().enabled = false;
         gO.SetActive(true);
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
