@@ -11,7 +11,7 @@ public class FinalScript : MonoBehaviour
 
     private IEnumerator CloseGame()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(8f);
         Application.Quit();
     }
 }
