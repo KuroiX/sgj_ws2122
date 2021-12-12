@@ -11,18 +11,29 @@ public class DeathBehaviour : MonoBehaviour
     
     [SerializeField] private AudioClip clip;
 
+    [SerializeField] private Transform cameraPos;
+    //private float _distance;
+    private float _initialCamHeight;
+
     private void Awake()
     {
         _initialPosition = transform.position;
         _controller = GetComponent<CharacterController>();
     }
-    
+
+    private void Start()
+    {
+        _initialCamHeight = cameraPos.position.y;
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (1 << col.gameObject.layer != deathMask) return;
 
+        cameraPos.position = new Vector3(cameraPos.position.x, _initialCamHeight, cameraPos.position.z);
+
         FindObjectOfType<AudioSource>().PlayOneShot(clip);
-        
+
         transform.position = _initialPosition;
         _controller.ResetLayer();
         StartCoroutine(DisableInputForASec());

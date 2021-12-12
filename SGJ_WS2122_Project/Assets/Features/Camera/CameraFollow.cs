@@ -30,6 +30,9 @@ public class CameraFollow : MonoBehaviour
         
         if (followTransform.position.y - fixedCamPos < thresholdMin)
             transform.position = new Vector3(transform.position.x, followTransform.position.y + _startDistance + thresholdMin, transform.position.z);
+
+        if (transform.position.y < -0.7366674f)
+            transform.position = new Vector3(transform.position.x, -0.7366674f, transform.position.z);
     }
 
     public IEnumerator CenterCamera()
