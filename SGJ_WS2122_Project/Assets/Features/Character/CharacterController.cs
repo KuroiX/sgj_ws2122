@@ -33,6 +33,8 @@ public class CharacterController : MonoBehaviour
 
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource source;
+
+    private Animator _playerAnimator;
     
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class CharacterController : MonoBehaviour
         _currentLayerIndex = initialLayer;
 
         _postProcess = FindObjectOfType<PostProcess>();
+        _playerAnimator = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
@@ -73,7 +76,16 @@ public class CharacterController : MonoBehaviour
 
     private void Move(InputAction.CallbackContext ctx)
     {
-        _move = moveSpeed * ctx.ReadValue<float>();
+        float value = ctx.ReadValue<float>();
+        _move = moveSpeed * value;
+        if (value != 0)
+            _playerAnimator.SetTrigger(Animator.StringToHash("isMoving"));
+        else
+            _playerAnimator.ResetTrigger(Animator.StringToHash("isMoving"));
+        if (value > 0)
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        else if (value < 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
     
     private void SwitchLayer(InputAction.CallbackContext ctx)
