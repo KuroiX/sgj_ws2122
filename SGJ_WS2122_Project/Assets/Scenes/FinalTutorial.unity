@@ -5523,17 +5523,17 @@ MonoBehaviour:
     be blurry. Focus as though you are looking through the screen into the distance.
     Very slowly move your head away from the screen until the two dots turn into
     three. If you see four dots, move the image farther away from your face until
-    you see three squares. If you see one or two dots, start over!
+    you see three dots. If you see one or two dots, start over!
 
 
 
-    When you
-    clearly see three dots, hold your head still and the hidden image will magically
-    appear. Good Luck!
+    When you clearly
+    see three dots, hold your head still and the hidden image will magically appear.
+    Good Luck!
 
 
-    Continue the tutorial after you gained some confidence
-    with the technique.'
+    Continue the tutorial after you gained some confidence with
+    the technique.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
