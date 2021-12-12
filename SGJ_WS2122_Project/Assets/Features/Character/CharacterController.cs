@@ -35,6 +35,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private AudioSource source;
 
     private Animator _playerAnimator;
+    private TextureMode _textureMode;
     
     private void Awake()
     {
@@ -48,6 +49,8 @@ public class CharacterController : MonoBehaviour
 
         _postProcess = FindObjectOfType<PostProcess>();
         _playerAnimator = GetComponentInChildren<Animator>();
+
+        _textureMode = TextureMode.Color;
     }
 
     private void OnEnable()
@@ -143,6 +146,22 @@ public class CharacterController : MonoBehaviour
             backgroundSound.SwitchBackground();
         else
             Debug.Log("No Background Sound Source found. If you're not in the Level1 scene, theres no need to do anything.");
+        
+        if (_textureMode == TextureMode.Color)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y, transform.localScale.z);
+            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x / 2f,
+                ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
+            _textureMode = TextureMode.Depth;
+        } 
+        else if (_textureMode == TextureMode.Depth)
+        {
+            transform.localScale = new Vector3(transform.localScale.x / 2, transform.localScale.y, transform.localScale.z);
+            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x * 2f,
+                ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
+            _textureMode = TextureMode.Color;
+        }
+        
         _postProcess.SwitchTexture();
     }
 
