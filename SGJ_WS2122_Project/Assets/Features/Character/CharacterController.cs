@@ -82,8 +82,19 @@ public class CharacterController : MonoBehaviour
             _collider.bounds.extents * 0.95f, 
             Quaternion.identity, 
             groundedMask);
+
+        bool isCollidingWithWall = false;
+
+        foreach (var col in colliders)
+        {
+            if (!col.isTrigger)
+            {
+                isCollidingWithWall = true;
+                break;
+            }
+        }
         
-        if (colliders.Length > 0) return;
+        if (isCollidingWithWall) return;
 
         _currentLayerIndex = temp;
         
