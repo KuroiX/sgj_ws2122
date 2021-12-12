@@ -150,15 +150,13 @@ public class CharacterController : MonoBehaviour
         if (_textureMode == TextureMode.Color)
         {
             transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y, transform.localScale.z);
-            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x / 2f,
-                ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
+            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x / 2f, ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
             _textureMode = TextureMode.Depth;
         } 
         else if (_textureMode == TextureMode.Depth)
         {
             transform.localScale = new Vector3(transform.localScale.x / 2, transform.localScale.y, transform.localScale.z);
-            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x * 2f,
-                ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
+            ((BoxCollider) _collider).size = new Vector3(((BoxCollider) _collider).size.x * 2f, ((BoxCollider) _collider).size.y, ((BoxCollider) _collider).size.z);
             _textureMode = TextureMode.Color;
         }
         
