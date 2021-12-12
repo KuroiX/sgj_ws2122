@@ -29,6 +29,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask groundedMask;
 
     private PostProcess _postProcess;
+
+    [SerializeField] private AudioClip clip;
+    private AudioSource _source;
     
     private void Awake()
     {
@@ -41,6 +44,7 @@ public class CharacterController : MonoBehaviour
         _currentLayerIndex = initialLayer;
 
         _postProcess = FindObjectOfType<PostProcess>();
+        _source = FindObjectOfType<AudioSource>();
     }
 
     private void OnEnable()
@@ -82,9 +86,22 @@ public class CharacterController : MonoBehaviour
             _collider.bounds.extents * 0.95f, 
             Quaternion.identity, 
             groundedMask);
-        
-        if (colliders.Length > 0) return;
 
+        bool isCollidingWithWall = false;
+
+        foreach (var col in colliders)
+        {
+            if (!col.isTrigger)
+            {
+                isCollidingWithWall = true;
+                break;
+            }
+        }
+        
+        if (isCollidingWithWall) return;
+
+        _source.PlayOneShot(clip);
+        
         _currentLayerIndex = temp;
         
         transform.position = new Vector3(transform.position.x, transform.position.y, layerValues[_currentLayerIndex]);
