@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
+using Color = UnityEngine.Color;
 
 public class FinalKey : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class FinalKey : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        other.gameObject.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+    
         FindObjectOfType<PostProcess>().enabled = false;
         gO.SetActive(true);
 

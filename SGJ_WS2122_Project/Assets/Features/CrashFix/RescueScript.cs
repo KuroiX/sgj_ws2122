@@ -5,7 +5,7 @@ public class RescueScript : MonoBehaviour
 {
 
     private void Start() {
-        SceneManager.LoadScene("Scenes/FinalTutorial2");
+        SceneManager.LoadScene("Scenes/Level1");
     }
 
 }
