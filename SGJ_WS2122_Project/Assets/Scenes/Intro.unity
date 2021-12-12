@@ -419,7 +419,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Each mirror was so powerful that its reflection created a new dimension
-    which was then replacing the void.\u200B\u200B "
+    which were then replacing the void.\u200B\u200B "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: One of them was the mirror of color, the other was the mirror of shapes.
+  m_text: One of them was the mirror of color, the other was the mirror of shape.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -919,8 +919,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: However... one day, the mirror of shapes shattered, and thus the world
-    was torn in two pieces...
+  m_text: However... one day, the mirror of shape shattered, and thus the world was
+    torn in two pieces...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1243,8 +1243,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888, y: -0.00012207}
-  m_SizeDelta: {x: 508.5992, y: 144.6371}
+  m_AnchoredPosition: {x: 10.339, y: -0.00047258}
+  m_SizeDelta: {x: 931.2046, y: 144.6371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107537884
 MonoBehaviour:

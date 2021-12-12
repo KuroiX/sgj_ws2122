@@ -242,8 +242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.1818, y: 122.27557}
-  m_SizeDelta: {x: 1052.8168, y: 416.4435}
+  m_AnchoredPosition: {x: 17.1818, y: 100.602844}
+  m_SizeDelta: {x: 1052.8168, y: 373.0981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38031873
 MonoBehaviour:
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can jump on higher blocks or to avoid obstacles by pressing space.
+  m_text: You can jump to reach higher blocks or to avoid obstacles by pressing space.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1871,7 +1871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -531.8176, y: 350}
+  m_AnchoredPosition: {x: -567.41, y: 346}
   m_SizeDelta: {x: 785.1815, y: 307.0534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400263461
@@ -2085,7 +2085,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2529,8 +2529,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -531.8176, y: 350}
-  m_SizeDelta: {x: 785.1815, y: 307.0534}
+  m_AnchoredPosition: {x: -567.41, y: 405}
+  m_SizeDelta: {x: 785.1815, y: 133.6721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576238838
 MonoBehaviour:
@@ -2726,8 +2726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -531.8176, y: 350}
-  m_SizeDelta: {x: 785.1815, y: 307.0534}
+  m_AnchoredPosition: {x: -567.41, y: 370}
+  m_SizeDelta: {x: 785.1815, y: 228.2437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595541770
 MonoBehaviour:
@@ -2990,12 +2990,7 @@ MonoBehaviour:
 
 
     Right now,
-    you are in the color dimension, where you can see differently colored blocks.
-
-
-    You
-    can walk on green blocks, but you have to avoid touching a red block, since they
-    are hazardorous and kill you.'
+    you are in the color dimension, where you can see differently colored blocks.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5563,7 +5558,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6126,7 +6121,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6378,7 +6373,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6941,7 +6936,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -9255,7 +9250,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Now let's get to the juicy part. You can switch back and forth between
     the color and the shape dimension by pressing Tab. \n\nHowever, the mirror is
-    broken so you have to use a special technique to even see whats going on.\n\nSwitch
+    broken so you have to use a special technique to even see what's going on.\n\nSwitch
     to the shape dimension and just walk to the right until the next text box appears.
     It will explain the viewing technique."
   m_isRightToLeft: 0
