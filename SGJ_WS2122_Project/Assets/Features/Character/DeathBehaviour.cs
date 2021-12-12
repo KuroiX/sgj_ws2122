@@ -8,6 +8,8 @@ public class DeathBehaviour : MonoBehaviour
     private CharacterController _controller;
 
     [SerializeField] private LayerMask deathMask;
+    
+    [SerializeField] private AudioClip clip;
 
     private void Awake()
     {
@@ -18,6 +20,8 @@ public class DeathBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         if (1 << col.gameObject.layer != deathMask) return;
+
+        FindObjectOfType<AudioSource>().PlayOneShot(clip);
         
         transform.position = _initialPosition;
         _controller.ResetLayer();
