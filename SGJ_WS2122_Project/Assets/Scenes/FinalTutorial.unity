@@ -8708,6 +8708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   clip: {fileID: 8300000, guid: 27c4a3f3b0c1ca64b86e144383fa5f4d, type: 3}
+  cameraPos: {fileID: 518094672}
 --- !u!114 &1540615834
 MonoBehaviour:
   m_ObjectHideFlags: 0

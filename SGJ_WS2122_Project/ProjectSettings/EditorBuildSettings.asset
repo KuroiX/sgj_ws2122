@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 050e5c0fd9cefb645aa7106d82416cdd
   - enabled: 1
     path: Assets/Scenes/FinalTutorial.unity
-    guid: e26bd937d6f91694dac3afdf85dbedd1
+    guid: 032542fbd579c434db0946794441e2b4
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 4a70b43dc63a8cd40b75486896310f34
