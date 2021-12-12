@@ -29,9 +29,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask groundedMask;
 
     private PostProcess _postProcess;
+    [SerializeField] private BackgroundSound backgroundSound;
 
     [SerializeField] private AudioClip clip;
-    private AudioSource _source;
+    [SerializeField] private AudioSource source;
     
     private void Awake()
     {
@@ -44,7 +45,6 @@ public class CharacterController : MonoBehaviour
         _currentLayerIndex = initialLayer;
 
         _postProcess = FindObjectOfType<PostProcess>();
-        _source = FindObjectOfType<AudioSource>();
     }
 
     private void OnEnable()
@@ -100,7 +100,7 @@ public class CharacterController : MonoBehaviour
         
         if (isCollidingWithWall) return;
 
-        _source.PlayOneShot(clip);
+        source.PlayOneShot(clip);
         
         _currentLayerIndex = temp;
         
@@ -127,6 +127,10 @@ public class CharacterController : MonoBehaviour
     
     private void SwitchMirror(InputAction.CallbackContext ctx)
     {
+        if (backgroundSound)
+            backgroundSound.SwitchBackground();
+        else
+            Debug.Log("No Background Sound Source found. If you're not in the Level1 scene, theres no need to do anything.");
         _postProcess.SwitchTexture();
     }
 

@@ -7130,7 +7130,9 @@ MonoBehaviour:
   groundedMask:
     serializedVersion: 2
     m_Bits: 128
+  backgroundSound: {fileID: 0}
   clip: {fileID: 8300000, guid: cb16fab49418b5d45be2813541bd7afc, type: 3}
+  source: {fileID: 382163931}
 --- !u!54 &1606592906
 Rigidbody:
   m_ObjectHideFlags: 0

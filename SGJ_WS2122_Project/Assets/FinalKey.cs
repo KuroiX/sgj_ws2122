@@ -7,6 +7,7 @@ public class FinalKey : MonoBehaviour
     [SerializeField] private GameObject gO;
 
     [SerializeField] private AudioClip clip;
+    [SerializeField] private BackgroundSound backgroundSound;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,8 @@ public class FinalKey : MonoBehaviour
         FindObjectOfType<AudioSource>().PlayOneShot(clip);
         
         RenderSettings.ambientLight = new Color(0.9649928f, 0.9649928f,0.9649928f, 1);
+        
+        backgroundSound.EndMusic();
         
         Destroy(transform.parent.gameObject);
     }
